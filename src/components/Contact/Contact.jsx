@@ -4,6 +4,8 @@ import css from './Contact.module.css';
 
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
+  console.log("🚀 ~ Contact ~ contact:", contact)
+  console.log("🚀 ~ Contact ~ dispatch:", dispatch)
 
   return (
     <div className={css.contactContainer}>
@@ -19,3 +21,10 @@ export default function Contact({ contact }) {
     </div>
   );
 }
+// Contact.propTypes = {
+//   contact: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     number: PropTypes.string.isRequired,
+//   }).isRequired,
+// };

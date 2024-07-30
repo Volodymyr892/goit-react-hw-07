@@ -7,12 +7,13 @@ import { selectNameFilter } from "../../redux/filtersSlice"
 
 export default function ContactList() {
     const contacts = useSelector(selectContacts);
+    console.log("🚀 ~ ContactList ~ contacts:", contacts)
     const filter = useSelector(selectNameFilter);
   
     const visibleContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
-    console.log("🚀 ~ ContactList ~ visibleContacts:", visibleContacts)
+  
   
     return (
       <ul className={css.list}>
