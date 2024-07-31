@@ -8,39 +8,17 @@ import Loader from '../Loader/Loader'
 import css from './App.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../../redux/contactsOps';
+import { selectError, selectLoading } from '../../redux/contactsSlice';
 
 export default function App(){
    const dispatch = useDispatch()
-   const isloading = useSelector((state) => state.contacts.loading);
-   const isError = useSelector((state) => state.contacts.error)
+   const isloading = useSelector(selectLoading);
+   const isError = useSelector(selectError)
 
    useEffect (()=>{
         dispatch(fetchContacts())
    },[dispatch])
-    // const [contacts, setContacts] = useState(() => {
-    //         const savedContacts = localStorage.getItem('contacts');
-    //         return savedContacts ? JSON.parse(savedContacts) : contact;
-    //     });
-    // const [filter, setFilter] = useState('');
-
-    // useEffect(() => {
-    //     localStorage.setItem('contacts', JSON.stringify(contacts));
-    // }, [contacts]);
-
-    // const addContact = (newContact) =>{
-    //     setContacts((prevContacts)=>{
-    //         return[...prevContacts, newContact ]
-    //     })}
-    
-    // const deleteContact =(contactId)=> {
-    //     setContacts((prevContacts)=>{
-    //         return prevContacts.filter(contact => contact.id !== contactId)
-    //     }
-
-    //     )
-    // }
-
-    // const visibleContacts = contacts.filter((contact)=> contact.name.toLowerCase().includes(filter.toLowerCase()))
+   
 
     return(
         <div className={css.appContainer}>
