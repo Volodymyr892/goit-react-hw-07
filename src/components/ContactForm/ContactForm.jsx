@@ -38,12 +38,12 @@ export default function ContactForm(){
         >
             <Form className={css.formContainer}>
                 <div className={css.formField}>
-                    <p className={css.fieldP}>Name</p>
+                    <p className={css.fielP}>Name</p>
                     <Field className={css.inputField} type="text" name="name" />
                     <ErrorMessage className={css.errorMessage} name="name" component="span"/>
                 </div>
                 <div className={css.formField}>
-                    <p className={css.fieldP}>Number</p>
+                    <p className={css.fielP}>Number</p>
                     <Field className={css.inputField} type="text" name="number"/>
                     <ErrorMessage className={css.errorMessage} name="number" component="span"/>
                 </div>
